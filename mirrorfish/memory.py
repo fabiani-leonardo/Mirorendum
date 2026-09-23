@@ -63,8 +63,6 @@ REFLECTION_SYSTEM = (
     "Indica poi in `direzione` da che parte spinge quanto hai scritto: "
     "'verso_si' se avvicina all'approvazione della riforma, 'verso_no' se "
     "l'allontana, 'nessuna' se e' solo una sfumatura senza direzione. "
-    "Ricorda che la riforma IN VOTO introduce la separazione delle carriere: "
-    "chi la sostiene vota SI, chi la osteggia vota NO. "
     "REGOLA 3: non attribuire all'agente una posizione che non risulti dalla "
     "biografia o dalle note gia' scritte. Tu NON sai come voterebbe. Se i post "
     "lo hanno colpito, descrivi cio' che ha trovato convincente o discutibile, "
