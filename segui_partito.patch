@@ -1,0 +1,165 @@
+diff -ru a/mirrorfish/config.py b/mirrorfish/config.py
+--- a/mirrorfish/config.py	2026-09-27 17:43:51.888365081 +0000
++++ b/mirrorfish/config.py	2026-09-27 17:43:51.938084402 +0000
+@@ -214,6 +214,10 @@
+     temperatura_azione: float | None = None
+     temperatura_riflessione: float | None = None
+     temperatura_voto: float | None = None
++    # Se True ogni elettore segue l'account del partito che dichiara. Senza,
++    # il legame nasce solo per i partiti con un nome di due o piu' parole
++    # maiuscole (PD, FI, AVS) e manca per FdI, M5S e Lega.
++    segui_partito: bool = False
+ 
+     # Finestra canonica: apertura della campagna referendaria -> giorno del voto.
+     start_date: date = date(2025, 10, 30)
+@@ -336,6 +340,8 @@
+         # continui a funzionare su di esse.
+         if not d.get("seed_modello"):
+             d.pop("seed_modello", None)
++        if not d.get("segui_partito"):
++            d.pop("segui_partito", None)
+         for k in ("temperatura_azione", "temperatura_riflessione", "temperatura_voto"):
+             if d.get(k) is None:
+                 d.pop(k, None)
+diff -ru a/mirrorfish/population.py b/mirrorfish/population.py
+--- a/mirrorfish/population.py	2026-09-27 17:43:51.891485757 +0000
++++ b/mirrorfish/population.py	2026-09-27 17:43:51.937856589 +0000
+@@ -277,7 +277,8 @@
+ 
+ 
+ def relazioni_dichiarate(
+-    agents: list[dict[str, Any]]
++    agents: list[dict[str, Any]],
++    escludi_istituzionali: bool = False,
+ ) -> tuple[list[tuple[int, int]], int, int]:
+     """
+     Archi ricavati dalle relazioni scritte nelle biografie.
+@@ -305,6 +306,14 @@
+ 
+     archi: set[tuple[int, int]] = set()
+     risolte = non_risolte = 0
++    # Il segmento "vota X" aggancia il partito come se fosse una persona, e
++    # solo quando il nome ha due o piu' parole maiuscole: PD, FI e AVS si',
++    # FdI (apostrofo), M5S (cifra) e Lega (parola sola) no. Con
++    # escludi_istituzionali il legame elettore-partito e' lasciato a
++    # legami_di_partito(), che lo crea per tutti e in una sola direzione.
++    istituzionali = ({a["agent_id"] for a in agents
++                      if not a.get("is_source") and not a.get("is_voter", 1)}
++                     if escludi_istituzionali else set())
+     for a in agents:
+         if a.get("is_source"):
+             continue
+@@ -317,7 +326,7 @@
+                     if altro is None:
+                         non_risolte += 1
+                         continue
+-                    if altro == me:
++                    if altro == me or altro in istituzionali:
+                         continue
+                     risolte += 1
+                     archi.add((me, altro))
+@@ -325,6 +334,41 @@
+     return sorted(archi), risolte, non_risolte
+ 
+ 
++def _norm_partito(testo: str) -> str:
++    """'Fratelli d'Italia' e 'fratelli_ditalia' -> 'fratelliditalia'."""
++    return re.sub(r"[^a-z0-9]", "", testo.lower().replace(" e ", " "))
++
++
++def legami_di_partito(agents: list[dict[str, Any]]) -> tuple[list[tuple[int, int]], dict[str, int]]:
++    """
++    Ogni elettore che dichiara un partito nella biografia ("vota X") segue
++    l'account di quel partito, se esiste. Il legame e' in una sola direzione,
++    come il follow di un account pubblico, e vale per tutti i partiti allo
++    stesso modo, qualunque sia la forma del loro nome.
++    """
++    conti: dict[str, int] = {}
++    per_partito: dict[str, tuple[int, str]] = {}
++    for a in agents:
++        if a.get("is_source") or a.get("is_voter", 1):
++            continue
++        parti = str(a.get("username", "")).rsplit("_", 1)
++        base = parti[0] if len(parti) == 2 and parti[1].isdigit() else a.get("username", "")
++        per_partito[_norm_partito(base)] = (a["agent_id"], a.get("username", ""))
++    archi: list[tuple[int, int]] = []
++    for a in agents:
++        if a.get("is_source") or not a.get("is_voter", 1):
++            continue
++        m = re.search(r"\bvota ([^.,]+)", a.get("static_bio") or "")
++        if not m:
++            continue
++        hit = per_partito.get(_norm_partito(m.group(1)))
++        if hit is None:
++            continue
++        archi.append((a["agent_id"], hit[0]))
++        conti[hit[1]] = conti.get(hit[1], 0) + 1
++    return archi, conti
++
++
+ def diagnosi_grafo(agents: list[dict[str, Any]],
+                    edges: list[tuple[int, int]]) -> dict[str, Any]:
+     """
+@@ -383,6 +427,7 @@
+     homophily: float = 0.6,
+     usa_relazioni: bool = True,
+     verbose: bool = True,
++    segui_partito: bool = False,
+ ) -> list[tuple[int, int]]:
+     """
+     Grafo dei follow. Due modalita' ALTERNATIVE, non cumulative.
+@@ -411,7 +456,8 @@
+     gradi: dict[int, int] = {a["agent_id"]: 0 for a in people}
+     n_dichiarati = 0
+     if usa_relazioni:
+-        dichiarati, risolte, non_risolte = relazioni_dichiarate(agents)
++        dichiarati, risolte, non_risolte = relazioni_dichiarate(
++            agents, escludi_istituzionali=segui_partito)
+         edges.update(dichiarati)
+         n_dichiarati = len(dichiarati)
+         for x, _ in dichiarati:
+@@ -426,6 +472,14 @@
+                       "parte della popolazione, oppure il formato dello "
+                       "username non corrisponde al nome scritto in biografia.")
+ 
++    if segui_partito:
++        legami, conti = legami_di_partito(agents)
++        edges.update(legami)
++        for x, _ in legami:
++            gradi[x] = gradi.get(x, 0) + 1
++        if verbose:
++            dettaglio = ", ".join(f"{k} {v}" for k, v in sorted(conti.items(), key=lambda kv: -kv[1]))
++            print(f"[setup] elettori che seguono il proprio partito: {len(legami)} ({dettaglio})")
+     # Modalita' DICHIARATA: nessun arco casuale. Si entra qui solo se
+     # l'utente non ha chiesto un grado e le biografie hanno prodotto una rete.
+     if avg_degree is None and n_dichiarati:
+diff -ru a/run.py b/run.py
+--- a/run.py	2026-09-27 17:43:51.890047320 +0000
++++ b/run.py	2026-09-27 17:43:51.938584666 +0000
+@@ -143,6 +143,7 @@
+         temperatura_azione=args.temperatura_azione,
+         temperatura_riflessione=args.temperatura_riflessione,
+         temperatura_voto=args.temperatura_voto,
++        segui_partito=args.segui_partito,
+         start_date=start,
+         end_date=start + timedelta(days=args.days - 1),
+         hours_per_tick=args.hours_per_tick,
+@@ -292,7 +293,8 @@
+         edges = build_follow_graph(agents, seed=sim.seed,
+                                    avg_degree=args.avg_degree,
+                                    homophily=args.homophily,
+-                                   usa_relazioni=not args.no_relazioni)
++                                   usa_relazioni=not args.no_relazioni,
++                                   segui_partito=sim.segui_partito)
+         store.add_follows(edges)
+         d = diagnosi_grafo(agents, edges)
+         print(f"[setup] rete: {d['archi']} archi, grado medio "
+@@ -441,6 +443,8 @@
+         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+     p.add_argument("--out", default="runs/dev")
+     p.add_argument("--seed", type=int, default=d.seed)
++    p.add_argument("--segui-partito", action="store_true",
++                   help="ogni elettore segue l'account del partito che dichiara")
+     p.add_argument("--temperatura-azione", type=float, default=None,
+                    help="temperatura di scrittura di post e reazioni (default 0.7)")
+     p.add_argument("--temperatura-riflessione", type=float, default=None,

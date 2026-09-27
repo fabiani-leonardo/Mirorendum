@@ -206,6 +206,14 @@ class SimConfig:
     # governa solo attivazione, feed, notizie e grafo, e due run con lo
     # stesso seme divergono per il solo campionamento del modello.
     seed_modello: bool = False
+    # Temperature di campionamento; None = valore di LLMConfig (0,7 azione,
+    # 0,4 riflessione, 0,2 voto). Stanno in SimConfig e non in LLMConfig
+    # perche' solo SimConfig entra nell'impronta: due run con temperature
+    # diverse devono avere impronte diverse, e --resume deve rifiutarsi di
+    # mescolarle a meta' esecuzione.
+    temperatura_azione: float | None = None
+    temperatura_riflessione: float | None = None
+    temperatura_voto: float | None = None
 
     # Finestra canonica: apertura della campagna referendaria -> giorno del voto.
     start_date: date = date(2025, 10, 30)
@@ -328,6 +336,9 @@ class SimConfig:
         # continui a funzionare su di esse.
         if not d.get("seed_modello"):
             d.pop("seed_modello", None)
+        for k in ("temperatura_azione", "temperatura_riflessione", "temperatura_voto"):
+            if d.get(k) is None:
+                d.pop(k, None)
         return d
 
     def fingerprint(self) -> str:

@@ -140,6 +140,9 @@ def build_config(args: argparse.Namespace) -> SimConfig:
         run_id=Path(args.out).name,
         seed=args.seed,
         seed_modello=args.seed_modello,
+        temperatura_azione=args.temperatura_azione,
+        temperatura_riflessione=args.temperatura_riflessione,
+        temperatura_voto=args.temperatura_voto,
         start_date=start,
         end_date=start + timedelta(days=args.days - 1),
         hours_per_tick=args.hours_per_tick,
@@ -172,6 +175,12 @@ async def main_async(args: argparse.Namespace) -> None:
     sim = build_config(args)
     llm_cfg = LLMConfig.from_env(concurrency=args.concurrency,
                                  requests_per_minute=args.rpm)
+    if sim.temperatura_azione is not None:
+        llm_cfg.temperature = sim.temperatura_azione
+    if sim.temperatura_riflessione is not None:
+        llm_cfg.reflection_temperature = sim.temperatura_riflessione
+    if sim.temperatura_voto is not None:
+        llm_cfg.vote_temperature = sim.temperatura_voto
     if sim.max_actions > 1:
         # Piu' azioni = output piu' lungo, ma sempre UNA richiesta. Il
         # supplemento e' largo: il gateway addebita i token usati, non il
@@ -242,6 +251,9 @@ async def main_async(args: argparse.Namespace) -> None:
                                      "sha": impronta_quesito,
                                      "testo": testo_quesito})
     store.set_meta("llm", {"model": llm_cfg.model, "budget": llm_cfg.token_budget,
+                           "temperature": {"azione": llm_cfg.temperature,
+                                           "riflessione": llm_cfg.reflection_temperature,
+                                           "voto": llm_cfg.vote_temperature},
                            "concurrency": llm_cfg.concurrency,
                            "stub": bool(args.stub)})
 
@@ -429,6 +441,12 @@ def parse_args() -> argparse.Namespace:
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     p.add_argument("--out", default="runs/dev")
     p.add_argument("--seed", type=int, default=d.seed)
+    p.add_argument("--temperatura-azione", type=float, default=None,
+                   help="temperatura di scrittura di post e reazioni (default 0.7)")
+    p.add_argument("--temperatura-riflessione", type=float, default=None,
+                   help="temperatura del passo di riflessione (default 0.4)")
+    p.add_argument("--temperatura-voto", type=float, default=None,
+                   help="temperatura delle rilevazioni di voto (default 0.2)")
     p.add_argument("--seed-modello", action="store_true",
                    help="passa il seme anche al campionamento del modello, "
                         "per rendere riproducibili due run con lo stesso seme")

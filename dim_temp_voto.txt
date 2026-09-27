@@ -1,0 +1,137 @@
+❯ python scripts/revote.py runs/campagna_completa1/run.db --fasi final --quesiti ballot --temperature 0.0 0.2 0.5 1.0
+quesiti da /home/leo/Documents/MirrorFish/quesiti: ballot
+4 condizioni, circa 400 chiamate (~11 min a 38 rpm)
+lavoro sulla copia runs/campagna_completa1/revote.db; l'originale non viene modificato
+
+
+--- rv_final_ballot_t0  (quesito f015b9b51fe9) ---
+  SI  40  NO  46  AST  14   V  46.5%   affluenza  86.0%
+      centrodestra     n= 31   SI   42%   NO   58%   AST    0%
+      centrosinistra   n= 26   SI   31%   NO   69%   AST    0%
+      non dichiarato   n= 43   SI   44%   NO   23%   AST   33%
+
+--- rv_final_ballot_t0.2  (quesito f015b9b51fe9) ---
+  SI  39  NO  47  AST  14   V  45.3%   affluenza  86.0%
+      centrodestra     n= 31   SI   42%   NO   58%   AST    0%
+      centrosinistra   n= 26   SI   31%   NO   69%   AST    0%
+      non dichiarato   n= 43   SI   42%   NO   26%   AST   33%
+
+--- rv_final_ballot_t0.5  (quesito f015b9b51fe9) ---
+  SI  40  NO  46  AST  14   V  46.5%   affluenza  86.0%
+      centrodestra     n= 31   SI   42%   NO   58%   AST    0%
+      centrosinistra   n= 26   SI   31%   NO   69%   AST    0%
+      non dichiarato   n= 43   SI   44%   NO   23%   AST   33%
+
+--- rv_final_ballot_t1  (quesito f015b9b51fe9) ---
+  SI  41  NO  44  AST  15   V  48.2%   affluenza  85.0%
+      centrodestra     n= 31   SI   45%   NO   55%   AST    0%
+      centrosinistra   n= 26   SI   31%   NO   69%   AST    0%
+      non dichiarato   n= 43   SI   44%   NO   21%   AST   35%
+
+==============================================================================
+ RIEPILOGO
+==============================================================================
+  originale_baseline                 SI  48  NO  12  AST  40   V  80.0%   affluenza  60.0%
+  originale_final                    SI  40  NO  46  AST  14   V  46.5%   affluenza  86.0%
+  rv_final_ballot_t0                 SI  40  NO  46  AST  14   V  46.5%   affluenza  86.0%   accordo con originale 100% (100/100)
+  rv_final_ballot_t0.2               SI  39  NO  47  AST  14   V  45.3%   affluenza  86.0%   accordo con originale 99% (99/100)
+  rv_final_ballot_t0.5               SI  40  NO  46  AST  14   V  46.5%   affluenza  86.0%   accordo con originale 100% (100/100)
+  rv_final_ballot_t1                 SI  41  NO  44  AST  15   V  48.2%   affluenza  85.0%   accordo con originale 98% (98/100)
+
+  L'accordo con l'originale, a parita' di quesito e temperatura, misura la
+  ripetibilita' della lettura del voto: e' il pavimento di rumore dello
+  strumento. Se rivotando lo stesso agente con lo stesso stato si ottiene la
+  stessa risposta solo nell'80% dei casi, ogni spostamento sotto il 20% e'
+  indistinguibile dal rumore.
+❯ python scripts/revote.py runs/campagna_completa1b/run.db --fasi final --quesiti ballot --temperature 0.0 0.2 0.5 1.0
+quesiti da /home/leo/Documents/MirrorFish/quesiti: ballot
+4 condizioni, circa 400 chiamate (~11 min a 38 rpm)
+lavoro sulla copia runs/campagna_completa1b/revote.db; l'originale non viene modificato
+
+
+--- rv_final_ballot_t0  (quesito f015b9b51fe9) ---
+  SI   2  NO  80  AST  18   V   2.4%   affluenza  82.0%
+      centrodestra     n= 31   SI    6%   NO   94%   AST    0%
+      centrosinistra   n= 26   SI    0%   NO  100%   AST    0%
+      non dichiarato   n= 43   SI    0%   NO   58%   AST   42%
+
+--- rv_final_ballot_t0.2  (quesito f015b9b51fe9) ---
+  SI   2  NO  80  AST  18   V   2.4%   affluenza  82.0%
+      centrodestra     n= 31   SI    6%   NO   94%   AST    0%
+      centrosinistra   n= 26   SI    0%   NO  100%   AST    0%
+      non dichiarato   n= 43   SI    0%   NO   58%   AST   42%
+
+--- rv_final_ballot_t0.5  (quesito f015b9b51fe9) ---
+  SI   3  NO  78  AST  19   V   3.7%   affluenza  81.0%
+      centrodestra     n= 31   SI    6%   NO   94%   AST    0%
+      centrosinistra   n= 26   SI    0%   NO  100%   AST    0%
+      non dichiarato   n= 43   SI    2%   NO   53%   AST   44%
+
+--- rv_final_ballot_t1  (quesito f015b9b51fe9) ---
+  SI   5  NO  77  AST  18   V   6.1%   affluenza  82.0%
+      centrodestra     n= 31   SI    6%   NO   94%   AST    0%
+      centrosinistra   n= 26   SI    4%   NO   96%   AST    0%
+      non dichiarato   n= 43   SI    5%   NO   53%   AST   42%
+
+==============================================================================
+ RIEPILOGO
+==============================================================================
+  originale_baseline                 SI  50  NO  15  AST  35   V  76.9%   affluenza  65.0%
+  originale_final                    SI   3  NO  79  AST  18   V   3.7%   affluenza  82.0%
+  rv_final_ballot_t0                 SI   2  NO  80  AST  18   V   2.4%   affluenza  82.0%   accordo con originale 99% (99/100)
+  rv_final_ballot_t0.2               SI   2  NO  80  AST  18   V   2.4%   affluenza  82.0%   accordo con originale 99% (99/100)
+  rv_final_ballot_t0.5               SI   3  NO  78  AST  19   V   3.7%   affluenza  81.0%   accordo con originale 97% (97/100)
+  rv_final_ballot_t1                 SI   5  NO  77  AST  18   V   6.1%   affluenza  82.0%   accordo con originale 96% (96/100)
+
+  L'accordo con l'originale, a parita' di quesito e temperatura, misura la
+  ripetibilita' della lettura del voto: e' il pavimento di rumore dello
+  strumento. Se rivotando lo stesso agente con lo stesso stato si ottiene la
+  stessa risposta solo nell'80% dei casi, ogni spostamento sotto il 20% e'
+  indistinguibile dal rumore.
+❯ python scripts/revote.py runs/campagna_completa3/run.db --fasi final --quesiti ballot --temperature 0.0 0.2 0.5 1.0
+quesiti da /home/leo/Documents/MirrorFish/quesiti: ballot
+4 condizioni, circa 400 chiamate (~11 min a 38 rpm)
+lavoro sulla copia runs/campagna_completa3/revote.db; l'originale non viene modificato
+
+
+--- rv_final_ballot_t0  (quesito f015b9b51fe9) ---
+  SI  12  NO  62  AST  26   V  16.2%   affluenza  74.0%
+      centrodestra     n= 31   SI   32%   NO   68%   AST    0%
+      centrosinistra   n= 26   SI    0%   NO  100%   AST    0%
+      non dichiarato   n= 43   SI    5%   NO   35%   AST   60%
+
+--- rv_final_ballot_t0.2  (quesito f015b9b51fe9) ---
+  SI  12  NO  62  AST  26   V  16.2%   affluenza  74.0%
+      centrodestra     n= 31   SI   32%   NO   68%   AST    0%
+      centrosinistra   n= 26   SI    0%   NO  100%   AST    0%
+      non dichiarato   n= 43   SI    5%   NO   35%   AST   60%
+
+--- rv_final_ballot_t0.5  (quesito f015b9b51fe9) ---
+  SI  12  NO  62  AST  26   V  16.2%   affluenza  74.0%
+      centrodestra     n= 31   SI   32%   NO   68%   AST    0%
+      centrosinistra   n= 26   SI    0%   NO  100%   AST    0%
+      non dichiarato   n= 43   SI    5%   NO   35%   AST   60%
+
+--- rv_final_ballot_t1  (quesito f015b9b51fe9) ---
+  SI  11  NO  64  AST  25   V  14.7%   affluenza  75.0%
+      centrodestra     n= 31   SI   26%   NO   74%   AST    0%
+      centrosinistra   n= 26   SI    4%   NO   96%   AST    0%
+      non dichiarato   n= 43   SI    5%   NO   37%   AST   58%
+
+==============================================================================
+ RIEPILOGO
+==============================================================================
+  originale_baseline                 SI  45  NO  19  AST  35   V  70.3%   affluenza  64.6%
+  originale_final                    SI  12  NO  63  AST  25   V  16.0%   affluenza  75.0%
+  rv_final_ballot_t0                 SI  12  NO  62  AST  26   V  16.2%   affluenza  74.0%   accordo con originale 99% (99/100)
+  rv_final_ballot_t0.2               SI  12  NO  62  AST  26   V  16.2%   affluenza  74.0%   accordo con originale 99% (99/100)
+  rv_final_ballot_t0.5               SI  12  NO  62  AST  26   V  16.2%   affluenza  74.0%   accordo con originale 99% (99/100)
+  rv_final_ballot_t1                 SI  11  NO  64  AST  25   V  14.7%   affluenza  75.0%   accordo con originale 95% (95/100)
+
+  L'accordo con l'originale, a parita' di quesito e temperatura, misura la
+  ripetibilita' della lettura del voto: e' il pavimento di rumore dello
+  strumento. Se rivotando lo stesso agente con lo stesso stato si ottiene la
+  stessa risposta solo nell'80% dei casi, ogni spostamento sotto il 20% e'
+  indistinguibile dal rumore.
+~/Documents/MirrorFish main* ⇡                                                                                                                                   12m 8s MirrorFish 12:16:04
+MirrorFish ❯ 
