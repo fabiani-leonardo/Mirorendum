@@ -143,6 +143,7 @@ def build_config(args: argparse.Namespace) -> SimConfig:
         temperatura_azione=args.temperatura_azione,
         temperatura_riflessione=args.temperatura_riflessione,
         temperatura_voto=args.temperatura_voto,
+        segui_partito=args.segui_partito,
         start_date=start,
         end_date=start + timedelta(days=args.days - 1),
         hours_per_tick=args.hours_per_tick,
@@ -292,7 +293,8 @@ async def main_async(args: argparse.Namespace) -> None:
         edges = build_follow_graph(agents, seed=sim.seed,
                                    avg_degree=args.avg_degree,
                                    homophily=args.homophily,
-                                   usa_relazioni=not args.no_relazioni)
+                                   usa_relazioni=not args.no_relazioni,
+                                   segui_partito=sim.segui_partito)
         store.add_follows(edges)
         d = diagnosi_grafo(agents, edges)
         print(f"[setup] rete: {d['archi']} archi, grado medio "
@@ -441,6 +443,8 @@ def parse_args() -> argparse.Namespace:
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     p.add_argument("--out", default="runs/dev")
     p.add_argument("--seed", type=int, default=d.seed)
+    p.add_argument("--segui-partito", action="store_true",
+                   help="ogni elettore segue l'account del partito che dichiara")
     p.add_argument("--temperatura-azione", type=float, default=None,
                    help="temperatura di scrittura di post e reazioni (default 0.7)")
     p.add_argument("--temperatura-riflessione", type=float, default=None,

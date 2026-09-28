@@ -277,7 +277,8 @@ def _chiave_nome(testo: str) -> str:
 
 
 def relazioni_dichiarate(
-    agents: list[dict[str, Any]]
+    agents: list[dict[str, Any]],
+    escludi_istituzionali: bool = False,
 ) -> tuple[list[tuple[int, int]], int, int]:
     """
     Archi ricavati dalle relazioni scritte nelle biografie.
@@ -305,6 +306,14 @@ def relazioni_dichiarate(
 
     archi: set[tuple[int, int]] = set()
     risolte = non_risolte = 0
+    # Il segmento "vota X" aggancia il partito come se fosse una persona, e
+    # solo quando il nome ha due o piu' parole maiuscole: PD, FI e AVS si',
+    # FdI (apostrofo), M5S (cifra) e Lega (parola sola) no. Con
+    # escludi_istituzionali il legame elettore-partito e' lasciato a
+    # legami_di_partito(), che lo crea per tutti e in una sola direzione.
+    istituzionali = ({a["agent_id"] for a in agents
+                      if not a.get("is_source") and not a.get("is_voter", 1)}
+                     if escludi_istituzionali else set())
     for a in agents:
         if a.get("is_source"):
             continue
@@ -317,12 +326,47 @@ def relazioni_dichiarate(
                     if altro is None:
                         non_risolte += 1
                         continue
-                    if altro == me:
+                    if altro == me or altro in istituzionali:
                         continue
                     risolte += 1
                     archi.add((me, altro))
                     archi.add((altro, me))     # reciproco
     return sorted(archi), risolte, non_risolte
+
+
+def _norm_partito(testo: str) -> str:
+    """'Fratelli d'Italia' e 'fratelli_ditalia' -> 'fratelliditalia'."""
+    return re.sub(r"[^a-z0-9]", "", testo.lower().replace(" e ", " "))
+
+
+def legami_di_partito(agents: list[dict[str, Any]]) -> tuple[list[tuple[int, int]], dict[str, int]]:
+    """
+    Ogni elettore che dichiara un partito nella biografia ("vota X") segue
+    l'account di quel partito, se esiste. Il legame e' in una sola direzione,
+    come il follow di un account pubblico, e vale per tutti i partiti allo
+    stesso modo, qualunque sia la forma del loro nome.
+    """
+    conti: dict[str, int] = {}
+    per_partito: dict[str, tuple[int, str]] = {}
+    for a in agents:
+        if a.get("is_source") or a.get("is_voter", 1):
+            continue
+        parti = str(a.get("username", "")).rsplit("_", 1)
+        base = parti[0] if len(parti) == 2 and parti[1].isdigit() else a.get("username", "")
+        per_partito[_norm_partito(base)] = (a["agent_id"], a.get("username", ""))
+    archi: list[tuple[int, int]] = []
+    for a in agents:
+        if a.get("is_source") or not a.get("is_voter", 1):
+            continue
+        m = re.search(r"\bvota ([^.,]+)", a.get("static_bio") or "")
+        if not m:
+            continue
+        hit = per_partito.get(_norm_partito(m.group(1)))
+        if hit is None:
+            continue
+        archi.append((a["agent_id"], hit[0]))
+        conti[hit[1]] = conti.get(hit[1], 0) + 1
+    return archi, conti
 
 
 def diagnosi_grafo(agents: list[dict[str, Any]],
@@ -383,6 +427,7 @@ def build_follow_graph(
     homophily: float = 0.6,
     usa_relazioni: bool = True,
     verbose: bool = True,
+    segui_partito: bool = False,
 ) -> list[tuple[int, int]]:
     """
     Grafo dei follow. Due modalita' ALTERNATIVE, non cumulative.
@@ -411,7 +456,8 @@ def build_follow_graph(
     gradi: dict[int, int] = {a["agent_id"]: 0 for a in people}
     n_dichiarati = 0
     if usa_relazioni:
-        dichiarati, risolte, non_risolte = relazioni_dichiarate(agents)
+        dichiarati, risolte, non_risolte = relazioni_dichiarate(
+            agents, escludi_istituzionali=segui_partito)
         edges.update(dichiarati)
         n_dichiarati = len(dichiarati)
         for x, _ in dichiarati:
@@ -426,6 +472,14 @@ def build_follow_graph(
                       "parte della popolazione, oppure il formato dello "
                       "username non corrisponde al nome scritto in biografia.")
 
+    if segui_partito:
+        legami, conti = legami_di_partito(agents)
+        edges.update(legami)
+        for x, _ in legami:
+            gradi[x] = gradi.get(x, 0) + 1
+        if verbose:
+            dettaglio = ", ".join(f"{k} {v}" for k, v in sorted(conti.items(), key=lambda kv: -kv[1]))
+            print(f"[setup] elettori che seguono il proprio partito: {len(legami)} ({dettaglio})")
     # Modalita' DICHIARATA: nessun arco casuale. Si entra qui solo se
     # l'utente non ha chiesto un grado e le biografie hanno prodotto una rete.
     if avg_degree is None and n_dichiarati:

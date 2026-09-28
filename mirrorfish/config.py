@@ -214,6 +214,10 @@ class SimConfig:
     temperatura_azione: float | None = None
     temperatura_riflessione: float | None = None
     temperatura_voto: float | None = None
+    # Se True ogni elettore segue l'account del partito che dichiara. Senza,
+    # il legame nasce solo per i partiti con un nome di due o piu' parole
+    # maiuscole (PD, FI, AVS) e manca per FdI, M5S e Lega.
+    segui_partito: bool = False
 
     # Finestra canonica: apertura della campagna referendaria -> giorno del voto.
     start_date: date = date(2025, 10, 30)
@@ -336,6 +340,8 @@ class SimConfig:
         # continui a funzionare su di esse.
         if not d.get("seed_modello"):
             d.pop("seed_modello", None)
+        if not d.get("segui_partito"):
+            d.pop("segui_partito", None)
         for k in ("temperatura_azione", "temperatura_riflessione", "temperatura_voto"):
             if d.get(k) is None:
                 d.pop(k, None)
