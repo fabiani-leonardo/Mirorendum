@@ -1,0 +1,20 @@
+[setup] relazioni dichiarate nelle biografie: 486 archi reciproci, nomi risolti 342/344
+[setup] elettori che seguono il proprio partito: 57 (fratelli_ditalia_1 20, partito_democratico_2 14, movimento_5_stelle_3 8, forza_italia_106 6, lega_4 5, alleanza_verdi_sinistra_107 4)
+[setup] rete costruita SOLO dalle relazioni dichiarate (nessun --avg-degree richiesto)
+[setup] rete: 543 archi, grado medio 5.07, mediano 5
+[setup] 7 non seguono nessuno, 1 non hanno pubblico, 2 componenti (la maggiore ne contiene 106/107)
+[setup] 108 agenti (100 elettori), 543 archi, fonte=agent_id 0
+[setup] profondita' di lettura NEL DB: integrale=24 (2 slot), nessuna=34 (0 slot), titolo=49 (1 slot)
+[news] 1 notizie senza corpo integrale (0.2%): a quelle gli agenti 'integrale' vedono solo il titolo.
+[news] finestra simulata: 2025-10-30 -> 2026-03-22
+[news] 609 notizie schedulate su 117 tick (max 30/tick)
+  [baseline] 1/100 voti (0.1/min, ~696 min alla fine)
+  [baseline] 10/100 voti (1.0/min, ~91 min alla fine)
+  [baseline] 20/100 voti (1.5/min, ~52 min alla fine)
+
+ENDPOINT NON RAGGIUNGIBILE
+25 chiamate consecutive fallite (HTTP 500). Interrompo invece di proseguire: un run di sole chiamate fallite ha comunque l'aria di essere valido.
+Diagnostica: python scripts/check_endpoint.py
+Ripresa:     stesso comando piu' --resume
+
+Tick completati e salvati: 0. Nulla e' andato perso.

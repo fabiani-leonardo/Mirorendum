@@ -71,6 +71,26 @@ OPZIONI = {
     ],
 }
 
+
+def applica_testi(path: str) -> list[str]:
+    """
+    Sostituisce il testo delle opzioni con quello di un file JSON
+    {codice: testo}, per usare la formulazione esatta del questionario reale.
+    Le chiavi che iniziano con '_' sono commenti. Le opzioni non elencate
+    restano invariate; le fittizie SX e NX si possono sostituire ma non e'
+    necessario, perche' non hanno un corrispettivo reale.
+    """
+    import json
+    nuovi = {k: v for k, v in json.load(open(path, encoding="utf-8")).items() if not k.startswith("_")}
+    codici = {c for lato in OPZIONI.values() for c, _, _ in lato}
+    ignoti = set(nuovi) - codici
+    if ignoti:
+        sys.exit(f"codici sconosciuti in {path}: {', '.join(sorted(ignoti))}")
+    for lato in OPZIONI:
+        OPZIONI[lato] = [(c, nuovi.get(c, t), r) for c, t, r in OPZIONI[lato]]
+    return sorted(nuovi)
+
+
 DOMANDA = """Hai votato {voto} al referendum costituzionale sulla giustizia.
 
 Quali fra queste ragioni hanno pesato sulla tua scelta? Puoi indicarne piu' di \
@@ -92,6 +112,11 @@ evolute."""
 
 
 async def main_async(args) -> None:
+    # Store() crea un database vuoto se il file non esiste: controllarlo prima,
+    # altrimenti un percorso sbagliato produce un run.db vuoto e un falso
+    # "nessun voto".
+    if not Path(args.db).is_file():
+        sys.exit(f"file non trovato: {args.db}")
     store = Store(Path(args.db))
     con = sqlite3.connect(f"file:{args.db}?mode=ro", uri=True)
     con.row_factory = sqlite3.Row
@@ -100,7 +125,10 @@ async def main_async(args) -> None:
         "SELECT agent_id, vote FROM vote WHERE label = ? AND vote != 'ERROR'",
         (args.label,))}
     if not voti:
-        sys.exit(f"nessun voto con label={args.label} in {args.db}")
+        presenti = [f"{r[0]} ({r[1]})" for r in con.execute(
+            "SELECT label, COUNT(*) FROM vote GROUP BY label")]
+        sys.exit(f"nessun voto con label={args.label} in {args.db}; "
+                 f"etichette presenti: {', '.join(presenti) or 'nessuna, il database e vuoto'}")
 
     agenti = [a for a in store.agents(include_sources=False, voters_only=True)
               if voti.get(int(a["agent_id"])) in ("SI", "NO")]
@@ -115,7 +143,9 @@ async def main_async(args) -> None:
     async def chiedi(agent):
         aid = int(agent["agent_id"])
         voto = voti[aid]
-        ctx_label, ctx = build_context(store, agent, baseline=False)
+        # --iniziale: stesso contesto della rilevazione iniziale, solo la
+        # biografia e nessuna nota, per le rilevazioni fatte prima della campagna.
+        ctx_label, ctx = build_context(store, agent, baseline=args.iniziale)
         elenco = "\n".join(f"{c}  {t}" for c, t, _ in OPZIONI[voto])
         resp = await client.complete(
             SISTEMA.format(username=agent["username"],
@@ -178,7 +208,20 @@ def main() -> None:
     ap.add_argument("--max-tokens", type=int, default=300)
     ap.add_argument("--rpm", type=float, default=38)
     ap.add_argument("--concurrency", type=int, default=4)
+    ap.add_argument("--iniziale", action="store_true",
+                    help="contesto della rilevazione iniziale: solo biografia, nessuna nota")
+    ap.add_argument("--testi", help="file JSON {codice: testo} con la formulazione originale delle opzioni")
     args = ap.parse_args()
+    if args.iniziale:
+        print("contesto iniziale: solo biografia, nessuna nota\n")
+    if args.testi:
+        sostituiti = applica_testi(args.testi)
+        print(f"formulazione da {args.testi}, opzioni sostituite: {', '.join(sostituiti)}")
+        for lato in OPZIONI.values():
+            for c, t, _ in lato:
+                if c in sostituiti:
+                    print(f"  {c}  {t}")
+        print()
     asyncio.run(main_async(args))
 
 

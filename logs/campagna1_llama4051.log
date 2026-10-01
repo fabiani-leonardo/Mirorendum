@@ -1,0 +1,98 @@
+[setup] RIPRESA: 107 agenti in DB, ultimo tick completo = 139
+[setup] ripulito il tick parziale: {'reaction': 10, 'reply': 3, 'post': 22, 'llm_call': 20}
+[setup] profondita' di lettura NEL DB: integrale=24 (2 slot), nessuna=34 (0 slot), titolo=49 (1 slot)
+[news] 1 notizie senza corpo integrale (0.2%): a quelle gli agenti 'integrale' vedono solo il titolo.
+[news] finestra simulata: 2025-10-30 -> 2026-03-22
+[news] 609 notizie schedulate su 117 tick (max 30/tick)
+[survey] baseline gia' completa (100 voti), salto.
+[feed] politica: hybrid, fuori-rete 15%, 8 post per tick
+[engine] RIPRESA dal tick 140/144
+[engine] 107 agenti, 144 tick, seed=1
+[engine] 609 notizie su 117 tick (da 2025-10-30 a 2026-03-22)
+    tick 140: 1/20 agenti (0.7/min)
+    tick 140: 3/20 agenti (1.6/min)
+    tick 140: 5/20 agenti (2.2/min)
+    tick 140: 7/20 agenti (2.6/min)
+    tick 140: 8/20 agenti (2.5/min)
+    tick 140: 10/20 agenti (2.9/min)
+    tick 140: 12/20 agenti (3.0/min)
+    tick 140: 15/20 agenti (3.4/min)
+    tick 140: 20/20 agenti (4.2/min)
+  tick 140/144 2026-03-18 00h  attivi= 20 news= 9  post=1329 reply=417 like=4630 note=696 err=36  ETA 0.5h
+    tick 141: 1/13 agenti (0.9/min)
+    tick 141: 2/13 agenti (1.2/min)
+    tick 141: 4/13 agenti (2.0/min)
+    tick 141: 8/13 agenti (3.5/min)
+    tick 141: 12/13 agenti (4.3/min)
+  tick 141/144 2026-03-19 00h  attivi= 13 news=26  post=1338 reply=417 like=4656 note=696 err=36  ETA 0.3h
+    tick 142: 1/18 agenti (1.2/min)
+    tick 142: 3/18 agenti (2.2/min)
+    tick 142: 5/18 agenti (2.6/min)
+    tick 142: 8/18 agenti (3.5/min)
+    tick 142: 11/18 agenti (3.8/min)
+    tick 142: 14/18 agenti (4.2/min)
+  tick 142/144 2026-03-20 00h  attivi= 18 news=22  post=1349 reply=418 like=4688 note=702 err=36  ETA 0.2h
+    tick 143: 1/15 agenti (1.0/min)
+    tick 143: 2/15 agenti (1.3/min)
+    tick 143: 5/15 agenti (2.5/min)
+    tick 143: 7/15 agenti (3.0/min)
+    tick 143: 11/15 agenti (4.0/min)
+    tick 143: 13/15 agenti (4.2/min)
+  tick 143/144 2026-03-21 00h  attivi= 15 news= 2  post=1360 reply=418 like=4718 note=702 err=36  ETA 0.1h
+    tick 144: 1/24 agenti (0.9/min)
+    tick 144: 2/24 agenti (1.3/min)
+    tick 144: 5/24 agenti (2.6/min)
+    tick 144: 8/24 agenti (3.1/min)
+    tick 144: 10/24 agenti (3.4/min)
+    tick 144: 12/24 agenti (3.5/min)
+    tick 144: 15/24 agenti (3.8/min)
+    tick 144: 17/24 agenti (3.9/min)
+    tick 144: 20/24 agenti (4.2/min)
+    tick 144: 23/24 agenti (4.5/min)
+  tick 144/144 2026-03-22 00h  attivi= 24 news= 0  post=1379 reply=420 like=4764 note=705 err=36  ETA 0.0h
+  [final] 1/100 voti (1.3/min, ~78 min alla fine)
+  [final] 10/100 voti (5.6/min, ~16 min alla fine)
+  [final] 20/100 voti (6.7/min, ~12 min alla fine)
+  [final] 30/100 voti (7.1/min, ~10 min alla fine)
+  [final] 40/100 voti (7.3/min, ~8 min alla fine)
+  [final] 50/100 voti (7.3/min, ~7 min alla fine)
+  [final] 60/100 voti (7.5/min, ~5 min alla fine)
+  [final] 70/100 voti (7.8/min, ~4 min alla fine)
+  [final] 80/100 voti (7.8/min, ~3 min alla fine)
+  [final] 90/100 voti (7.7/min, ~1 min alla fine)
+  [final] 100/100 voti (8.0/min, ~0 min alla fine)
+
+--- RISULTATI [final] ---
+  SI           35   35.0%
+  NO           62   62.0%
+  ASTENUTO      3    3.0%
+  ERRORI        0
+  validi      100
+
+--- SPOSTAMENTI ---
+  cambiato idea : 51/100 (51.0%)
+    ASTENUTO->NO       25
+    SI->NO             19
+    ASTENUTO->SI       6
+    NO->SI             1
+
+--- VOTO FINALE PER FASCIA D'ETA' ---
+  18-34    ASTENUTO  1
+  18-34    NO        15
+  18-34    SI        8
+  35-54    NO        19
+  35-54    SI        8
+  55+      ASTENUTO  2
+  55+      NO        28
+  55+      SI        19
+
+--- TELEMETRIA LLM ---
+  scopo        chiamate  out medio  out max  budget  troncate  errori
+  action           2550       97.8      298    1024         0      15
+  reflection       2289       82.0      185    1024         0       0
+  vote              600      104.1      192     640         0       0
+  token di output totali: 499,592
+
+[done] risultati in runs/campagna1_llama405/  (run.db, shift_report.json, graph.json)
+[quesito] quesiti/ballot.txt (sha f015b9b51fe9)
+[done] fingerprint config: 050e6641aca9  codice: 3af21d3 (albero sporco)

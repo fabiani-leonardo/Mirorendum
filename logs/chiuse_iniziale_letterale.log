@@ -1,0 +1,18 @@
+contesto iniziale: solo biografia, nessuna nota
+
+formulazione da testi_originali.json, opzioni sostituite: N1, N2, N3, N4, N5, N6, N7, NX, S1, S2, S3, S4, S5, SX
+  S1  Sostegno alla separazione delle carriere tra magistrati inquirenti e giudicanti.
+  S2  Favore alla divisione del Consiglio Superiore della Magistratura (CSM).
+  S3  Sostegno all'istituzione di un'Alta Corte disciplinare.
+  S4  Volontà generale di modificare la Costituzione in questa direzione.
+  S5  Sostegno politico all'attuale Governo.
+  SX  Favore all'abolizione di un grado di giudizio.
+  N1  Volontà di non modificare la Costituzione.
+  N2  Contrarietà al meccanismo del sorteggio per i componenti del CSM.
+  N3  Voto di opposizione politica all'esecutivo in carica.
+  N4  Volontà di contrastare la divisione del CSM.
+  N5  Contrarietà all'istituzione dell'Alta Corte disciplinare.
+  N6  Coerenza o indicazione di voto del proprio partito di riferimento.
+  N7  Contrarietà specifica alla separazione delle carriere.
+  NX  Contrarietà all'abolizione di un grado di giudizio.
+

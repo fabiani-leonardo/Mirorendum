@@ -1,0 +1,58 @@
+formulazione da testi_originali.json, opzioni sostituite: N1, N2, N3, N4, N5, N6, N7, NX, S1, S2, S3, S4, S5, SX
+  S1  Sostegno alla separazione delle carriere tra magistrati inquirenti e giudicanti.
+  S2  Favore alla divisione del Consiglio Superiore della Magistratura (CSM).
+  S3  Sostegno all'istituzione di un'Alta Corte disciplinare.
+  S4  Volontà generale di modificare la Costituzione in questa direzione.
+  S5  Sostegno politico all'attuale Governo.
+  SX  Favore all'abolizione di un grado di giudizio.
+  N1  Volontà di non modificare la Costituzione.
+  N2  Contrarietà al meccanismo del sorteggio per i componenti del CSM.
+  N3  Voto di opposizione politica all'esecutivo in carica.
+  N4  Volontà di contrastare la divisione del CSM.
+  N5  Contrarietà all'istituzione dell'Alta Corte disciplinare.
+  N6  Coerenza o indicazione di voto del proprio partito di riferimento.
+  N7  Contrarietà specifica alla separazione delle carriere.
+  NX  Contrarietà all'abolizione di un grado di giudizio.
+
+92 agenti con voto SI o NO alla rilevazione 'final'
+(esclusi 8 astenuti: la rilevazione reale non riporta le loro ragioni)
+
+========================================================================
+ Ha votato SI: 29 agenti (0 risposte non interpretabili)
+========================================================================
+  cod    simulata   reale   scarto  motivazione
+  S1          79%     59%      +20  Sostegno alla separazione delle carriere tra
+  S2          66%     35%      +31  Favore alla divisione del Consiglio Superior
+  S3          59%     34%      +25  Sostegno all'istituzione di un'Alta Corte di
+  S4           0%     24%      -24  Volontà generale di modificare la Costituzio
+  S5          10%     18%       -8  Sostegno politico all'attuale Governo.
+  SX          21%fittizia        —  Favore all'abolizione di un grado di giudizi
+
+  nessuna opzione scelta: 3% degli agenti
+  OPZIONE FITTIZIA SX: scelta dal 21% degli agenti.
+  Quota non trascurabile: lo strumento a risposta chiusa sta
+  in parte fabbricando le risposte, e le altre quote vanno
+  lette con la stessa cautela.
+
+========================================================================
+ Ha votato NO: 63 agenti (0 risposte non interpretabili)
+========================================================================
+  cod    simulata   reale   scarto  motivazione
+  N1          13%     61%      -48  Volontà di non modificare la Costituzione.
+  N2          89%     39%      +50  Contrarietà al meccanismo del sorteggio per 
+  N3           0%     31%      -31  Voto di opposizione politica all'esecutivo i
+  N4          35%     27%       +8  Volontà di contrastare la divisione del CSM.
+  N5          57%     17%      +40  Contrarietà all'istituzione dell'Alta Corte 
+  N6           6%      7%       -1  Coerenza o indicazione di voto del proprio p
+  N7          67%      4%      +63  Contrarietà specifica alla separazione delle
+  NX          38%fittizia        —  Contrarietà all'abolizione di un grado di gi
+
+  nessuna opzione scelta: 0% degli agenti
+  OPZIONE FITTIZIA NX: scelta dal 38% degli agenti.
+  Quota non trascurabile: lo strumento a risposta chiusa sta
+  in parte fabbricando le risposte, e le altre quote vanno
+  lette con la stessa cautela.
+
+Confronta questa tabella con quella della domanda aperta. Una ragione
+assente nel testo libero e frequente qui non e' un'opinione della
+popolazione: e' un'opinione che l'elenco le ha suggerito.

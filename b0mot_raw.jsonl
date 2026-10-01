@@ -1,0 +1,120 @@
+{"condizione": "letterale", "voto": "NO", "rep": 0, "ordine": ["N3", "N1", "N7", "N2", "N5", "N4", "N6", "NX"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 1, "ordine": ["N2", "N7", "N4", "NX", "N1", "N3", "N6", "N5"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 2, "ordine": ["N5", "N6", "N4", "N7", "N1", "N3", "N2", "NX"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 3, "ordine": ["N2", "N5", "N3", "N7", "N1", "N4", "NX", "N6"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 4, "ordine": ["N4", "NX", "N3", "N5", "N1", "N6", "N7", "N2"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 5, "ordine": ["N2", "N5", "N1", "N4", "N7", "NX", "N3", "N6"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 6, "ordine": ["N3", "N7", "N4", "N5", "N1", "NX", "N2", "N6"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 7, "ordine": ["NX", "N4", "N2", "N1", "N5", "N3", "N6", "N7"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 8, "ordine": ["N4", "N7", "N6", "NX", "N2", "N1", "N3", "N5"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 9, "ordine": ["N7", "N2", "NX", "N4", "N6", "N1", "N5", "N3"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 10, "ordine": ["N2", "NX", "N7", "N5", "N6", "N3", "N1", "N4"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 11, "ordine": ["N5", "N1", "N2", "NX", "N6", "N3", "N7", "N4"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 12, "ordine": ["NX", "N5", "N1", "N2", "N6", "N7", "N4", "N3"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 13, "ordine": ["N6", "NX", "N5", "N7", "N1", "N4", "N3", "N2"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 14, "ordine": ["NX", "N4", "N2", "N6", "N1", "N5", "N7", "N3"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 15, "ordine": ["N6", "N7", "N4", "NX", "N2", "N1", "N3", "N5"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 16, "ordine": ["N2", "N7", "N1", "N4", "N5", "N3", "N6", "NX"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 17, "ordine": ["N3", "N1", "N5", "N4", "N2", "NX", "N7", "N6"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 18, "ordine": ["N6", "N7", "N2", "NX", "N1", "N4", "N3", "N5"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 19, "ordine": ["N3", "N5", "N2", "N4", "NX", "N1", "N6", "N7"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 20, "ordine": ["N4", "N3", "N7", "NX", "N5", "N1", "N2", "N6"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 21, "ordine": ["N4", "N3", "N2", "N1", "N5", "NX", "N6", "N7"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 22, "ordine": ["N4", "N5", "N1", "NX", "N2", "N3", "N7", "N6"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 23, "ordine": ["N5", "N7", "N1", "N2", "N6", "N4", "N3", "NX"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 24, "ordine": ["NX", "N2", "N3", "N6", "N1", "N4", "N7", "N5"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 25, "ordine": ["N7", "N5", "N1", "N3", "NX", "N4", "N6", "N2"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 26, "ordine": ["N6", "N7", "N4", "NX", "N5", "N3", "N1", "N2"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 27, "ordine": ["NX", "N3", "N6", "N7", "N1", "N4", "N5", "N2"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 28, "ordine": ["N3", "N7", "N1", "N2", "NX", "N4", "N6", "N5"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "NO", "rep": 29, "ordine": ["N5", "N6", "N1", "N4", "NX", "N2", "N3", "N7"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 0, "ordine": ["S3", "SX", "S1", "S4", "S2", "S5"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 1, "ordine": ["S5", "S1", "S4", "S2", "SX", "S3"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 2, "ordine": ["SX", "S3", "S5", "S4", "S2", "S1"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 3, "ordine": ["S2", "SX", "S3", "S4", "S5", "S1"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 4, "ordine": ["S1", "S3", "S4", "S5", "SX", "S2"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 5, "ordine": ["S5", "S3", "S1", "S2", "S4", "SX"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 6, "ordine": ["S5", "S2", "S3", "S1", "SX", "S4"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 7, "ordine": ["S1", "S4", "S2", "S3", "SX", "S5"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 8, "ordine": ["S4", "SX", "S1", "S2", "S5", "S3"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 9, "ordine": ["S1", "S5", "S4", "S3", "S2", "SX"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 10, "ordine": ["S2", "S5", "S1", "S3", "SX", "S4"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 11, "ordine": ["S1", "SX", "S2", "S4", "S3", "S5"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 12, "ordine": ["S5", "S2", "SX", "S4", "S1", "S3"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 13, "ordine": ["S4", "S2", "S3", "SX", "S1", "S5"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 14, "ordine": ["S4", "S2", "S1", "S5", "SX", "S3"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 15, "ordine": ["SX", "S1", "S4", "S5", "S3", "S2"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 16, "ordine": ["S5", "S3", "S1", "SX", "S4", "S2"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 17, "ordine": ["SX", "S5", "S3", "S1", "S2", "S4"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 18, "ordine": ["S1", "SX", "S3", "S5", "S4", "S2"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 19, "ordine": ["S2", "S3", "SX", "S5", "S1", "S4"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 20, "ordine": ["S4", "S3", "S1", "S2", "S5", "SX"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 21, "ordine": ["S3", "S4", "S1", "SX", "S2", "S5"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 22, "ordine": ["S5", "S2", "S1", "S4", "SX", "S3"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 23, "ordine": ["S1", "S5", "S4", "S3", "SX", "S2"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 24, "ordine": ["SX", "S4", "S1", "S2", "S5", "S3"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 25, "ordine": ["S2", "S1", "S4", "S5", "S3", "SX"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 26, "ordine": ["S5", "S3", "S1", "SX", "S4", "S2"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 27, "ordine": ["S5", "SX", "S3", "S4", "S1", "S2"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 28, "ordine": ["S1", "S3", "S5", "S2", "S4", "SX"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "letterale", "voto": "SI", "rep": 29, "ordine": ["S1", "S3", "S2", "S4", "S5", "SX"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 0, "ordine": ["NX", "N3", "N6", "N7", "N4", "N1", "N2", "N5"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 1, "ordine": ["N7", "NX", "N3", "N1", "N2", "N6", "N5", "N4"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 2, "ordine": ["N5", "N2", "N3", "N6", "N1", "N4", "N7", "NX"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 3, "ordine": ["N2", "N7", "NX", "N6", "N4", "N5", "N3", "N1"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 4, "ordine": ["N1", "N2", "N3", "N5", "N6", "N4", "NX", "N7"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 5, "ordine": ["NX", "N3", "N6", "N4", "N7", "N2", "N1", "N5"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 6, "ordine": ["N6", "N5", "N4", "N7", "NX", "N2", "N3", "N1"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 7, "ordine": ["NX", "N7", "N4", "N6", "N3", "N2", "N5", "N1"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 8, "ordine": ["N2", "N4", "N3", "N7", "N5", "NX", "N1", "N6"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 9, "ordine": ["N1", "N7", "NX", "N6", "N3", "N2", "N5", "N4"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 10, "ordine": ["NX", "N7", "N5", "N1", "N2", "N3", "N4", "N6"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 11, "ordine": ["NX", "N2", "N1", "N7", "N6", "N3", "N4", "N5"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 12, "ordine": ["N5", "N4", "N7", "N6", "N2", "NX", "N1", "N3"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 13, "ordine": ["N2", "N6", "N3", "N1", "N5", "N4", "N7", "NX"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 14, "ordine": ["NX", "N7", "N2", "N1", "N5", "N4", "N3", "N6"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 15, "ordine": ["N6", "N4", "N7", "N5", "N1", "NX", "N3", "N2"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 16, "ordine": ["N5", "N2", "N4", "N3", "N7", "N1", "N6", "NX"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 17, "ordine": ["N1", "N4", "NX", "N6", "N7", "N3", "N2", "N5"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 18, "ordine": ["N1", "N7", "N2", "NX", "N5", "N6", "N4", "N3"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 19, "ordine": ["NX", "N1", "N2", "N5", "N4", "N6", "N3", "N7"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 20, "ordine": ["NX", "N2", "N6", "N1", "N5", "N7", "N3", "N4"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 21, "ordine": ["N1", "N3", "NX", "N7", "N2", "N5", "N4", "N6"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 22, "ordine": ["N7", "N4", "N6", "N2", "NX", "N1", "N5", "N3"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 23, "ordine": ["N6", "N2", "N3", "N7", "N1", "N4", "N5", "NX"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 24, "ordine": ["N4", "N3", "N7", "N1", "N2", "N5", "N6", "NX"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 25, "ordine": ["N2", "N3", "N5", "N6", "N4", "N7", "N1", "NX"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 26, "ordine": ["N1", "N4", "N3", "NX", "N5", "N2", "N7", "N6"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 27, "ordine": ["N7", "N4", "NX", "N2", "N1", "N3", "N6", "N5"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 28, "ordine": ["N1", "N4", "N6", "N7", "N2", "N5", "NX", "N3"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "NO", "rep": 29, "ordine": ["N6", "N7", "N5", "NX", "N1", "N3", "N4", "N2"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 0, "ordine": ["S1", "SX", "S2", "S5", "S3", "S4"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 1, "ordine": ["SX", "S3", "S2", "S4", "S5", "S1"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 2, "ordine": ["S4", "S1", "SX", "S3", "S5", "S2"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 3, "ordine": ["SX", "S4", "S3", "S5", "S2", "S1"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 4, "ordine": ["S5", "SX", "S3", "S4", "S1", "S2"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 5, "ordine": ["S4", "S2", "S1", "S3", "S5", "SX"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 6, "ordine": ["S4", "S2", "SX", "S5", "S3", "S1"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 7, "ordine": ["S4", "S3", "S1", "S2", "SX", "S5"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 8, "ordine": ["SX", "S4", "S2", "S3", "S5", "S1"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 9, "ordine": ["S5", "SX", "S1", "S2", "S3", "S4"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 10, "ordine": ["S4", "S2", "S3", "SX", "S1", "S5"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 11, "ordine": ["S5", "S1", "S4", "SX", "S3", "S2"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 12, "ordine": ["S1", "S3", "S4", "S5", "S2", "SX"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 13, "ordine": ["S3", "S2", "S1", "S5", "S4", "SX"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 14, "ordine": ["S4", "S3", "SX", "S2", "S5", "S1"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 15, "ordine": ["S3", "S5", "S4", "S1", "SX", "S2"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 16, "ordine": ["S5", "SX", "S3", "S2", "S4", "S1"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 17, "ordine": ["S4", "S5", "S1", "SX", "S2", "S3"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 18, "ordine": ["S4", "S2", "S3", "SX", "S5", "S1"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 19, "ordine": ["SX", "S3", "S1", "S5", "S2", "S4"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 20, "ordine": ["S2", "S5", "S4", "SX", "S3", "S1"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 21, "ordine": ["S1", "S4", "SX", "S2", "S5", "S3"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 22, "ordine": ["S3", "S2", "S4", "SX", "S5", "S1"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 23, "ordine": ["SX", "S4", "S5", "S3", "S1", "S2"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 24, "ordine": ["S4", "S2", "S3", "S5", "SX", "S1"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 25, "ordine": ["S5", "S4", "S1", "SX", "S3", "S2"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 26, "ordine": ["S2", "S5", "S3", "S4", "SX", "S1"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 27, "ordine": ["S5", "S3", "S2", "SX", "S1", "S4"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 28, "ordine": ["S2", "S5", "S3", "S4", "SX", "S1"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}
+{"condizione": "schieramenti", "voto": "SI", "rep": 29, "ordine": ["SX", "S5", "S4", "S2", "S1", "S3"], "errore": "HTTP Error 500: Internal Server Error", "stime": null}

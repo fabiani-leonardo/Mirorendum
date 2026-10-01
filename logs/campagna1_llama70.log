@@ -1,0 +1,91 @@
+[setup] relazioni dichiarate nelle biografie: 486 archi reciproci, nomi risolti 342/344
+[setup] elettori che seguono il proprio partito: 57 (fratelli_ditalia_1 20, partito_democratico_2 14, movimento_5_stelle_3 8, forza_italia_106 6, lega_4 5, alleanza_verdi_sinistra_107 4)
+[setup] rete costruita SOLO dalle relazioni dichiarate (nessun --avg-degree richiesto)
+[setup] rete: 543 archi, grado medio 5.07, mediano 5
+[setup] 7 non seguono nessuno, 1 non hanno pubblico, 2 componenti (la maggiore ne contiene 106/107)
+[setup] 108 agenti (100 elettori), 543 archi, fonte=agent_id 0
+[setup] profondita' di lettura NEL DB: integrale=24 (2 slot), nessuna=34 (0 slot), titolo=49 (1 slot)
+[news] 1 notizie senza corpo integrale (0.2%): a quelle gli agenti 'integrale' vedono solo il titolo.
+[news] finestra simulata: 2025-10-30 -> 2026-03-22
+[news] 609 notizie schedulate su 117 tick (max 30/tick)
+  [baseline] 1/100 voti (16.9/min, ~6 min alla fine)
+  [baseline] 10/100 voti (26.0/min, ~3 min alla fine)
+  [baseline] 20/100 voti (29.2/min, ~3 min alla fine)
+  [baseline] 30/100 voti (30.3/min, ~2 min alla fine)
+  [baseline] 40/100 voti (29.6/min, ~2 min alla fine)
+  [baseline] 50/100 voti (31.4/min, ~2 min alla fine)
+  [baseline] 60/100 voti (31.5/min, ~1 min alla fine)
+  [baseline] 70/100 voti (31.4/min, ~1 min alla fine)
+  [baseline] 80/100 voti (31.3/min, ~1 min alla fine)
+  [baseline] 90/100 voti (31.6/min, ~0 min alla fine)
+  [baseline] 100/100 voti (31.9/min, ~0 min alla fine)
+
+--- RISULTATI [baseline] ---
+  SI            0    0.0%
+  NO            0    0.0%
+  ASTENUTO    100  100.0%
+  ERRORI        0
+  validi      100
+[feed] politica: hybrid, fuori-rete 15%, 8 post per tick
+[engine] 107 agenti, 144 tick, seed=1
+[engine] 609 notizie su 117 tick (da 2025-10-30 a 2026-03-22)
+    tick 1: 6/20 agenti (15.6/min)
+    tick 1: 20/20 agenti (26.6/min)
+  tick   1/144 2025-10-30 00h  attivi= 20 news=10  post=9 reply=4 like=6 note=0 err=5  ETA 1.8h
+    tick 2: 4/24 agenti (11.2/min)
+    tick 2: 13/24 agenti (17.4/min)
+  tick   2/144 2025-10-31 00h  attivi= 24 news= 7  post=11 reply=17 like=44 note=21 err=5  ETA 6.6h
+    tick 3: 1/18 agenti (2.7/min)
+    tick 3: 8/18 agenti (10.8/min)
+    tick 3: 18/18 agenti (16.8/min)
+  tick   3/144 2025-11-01 00h  attivi= 18 news= 1  post=11 reply=24 like=70 note=21 err=5  ETA 5.2h
+    tick 4: 2/22 agenti (5.9/min)
+    tick 4: 8/22 agenti (11.7/min)
+    tick 4: 15/22 agenti (14.5/min)
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/asyncio/runners.py", line 128, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/asyncio/base_events.py", line 720, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/home/leo/Documents/MirrorFish/run.py", line 380, in main_async
+    await engine.run(start_tick=start_tick)
+  File "/home/leo/Documents/MirrorFish/mirrorfish/engine.py", line 263, in run
+    await self._reflect_all(agents, tick)
+  File "/home/leo/Documents/MirrorFish/mirrorfish/engine.py", line 194, in _reflect_all
+    results = await asyncio.gather(*(one(a) for a in targets))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/leo/Documents/MirrorFish/mirrorfish/engine.py", line 188, in one
+    return await self.reflector.reflect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/leo/Documents/MirrorFish/mirrorfish/memory.py", line 129, in reflect
+    resp = await self.client.complete(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+    )
+    ^
+  File "/home/leo/Documents/MirrorFish/mirrorfish/llm.py", line 456, in complete
+    await self.gate.acquire()
+  File "/home/leo/Documents/MirrorFish/mirrorfish/llm.py", line 176, in acquire
+    await asyncio.sleep(min(sleep_for, 5.0))
+  File "/usr/lib/python3.14/asyncio/tasks.py", line 705, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/leo/Documents/MirrorFish/run.py", line 570, in <module>
+    asyncio.run(main_async(a))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/asyncio/runners.py", line 205, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.14/asyncio/runners.py", line 133, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt

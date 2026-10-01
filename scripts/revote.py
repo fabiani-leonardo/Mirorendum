@@ -217,6 +217,9 @@ async def rivota(args) -> None:
             print(f"  rv_{f}_{n}_t{t:g}")
         return
 
+    if dest.exists() and not args.forza:
+        sys.exit(f"{dest} esiste gia' e contiene una rivotazione precedente: "
+                 f"scegli un altro nome con --out, oppure usa --forza per sovrascriverlo")
     copia(src, dest)
     print(f"lavoro sulla copia {dest}; l'originale non viene modificato\n")
 
@@ -278,6 +281,8 @@ def main() -> None:
     ap.add_argument("--rpm", type=float, default=38)
     ap.add_argument("--concurrency", type=int, default=4)
     ap.add_argument("--out", default=None, help="percorso della copia (default revote.db)")
+    ap.add_argument("--forza", action="store_true",
+                    help="sovrascrive una copia gia' esistente, perdendo la rivotazione che contiene")
     args = ap.parse_args()
 
     if args.diagnosi:

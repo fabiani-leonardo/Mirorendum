@@ -1,0 +1,41 @@
+94 agenti con voto SI o NO alla rilevazione 'final'
+(esclusi 6 astenuti: la rilevazione reale non riporta le loro ragioni)
+
+========================================================================
+ Ha votato SI: 27 agenti (0 risposte non interpretabili)
+========================================================================
+  cod    simulata   reale   scarto  motivazione
+  S1          74%     59%      +15  sono favorevole alla separazione delle carri
+  S2          59%     35%      +24  sono favorevole alla divisione del CSM in du
+  S3          70%     34%      +36  sono favorevole all'istituzione dell'Alta Co
+  S4          93%     24%      +69  ritengo giusto modificare la Costituzione in
+  S5           0%     18%      -18  sostengo il Governo in carica
+  SX           0%fittizia        —  sono favorevole all'abolizione di un grado d
+
+  nessuna opzione scelta: 0% degli agenti
+  OPZIONE FITTIZIA SX: scelta dal 0% degli agenti.
+  Quota bassa: gli agenti non accolgono indiscriminatamente
+  le opzioni proposte, e il resto della tabella e' leggibile.
+
+========================================================================
+ Ha votato NO: 67 agenti (0 risposte non interpretabili)
+========================================================================
+  cod    simulata   reale   scarto  motivazione
+  N1          58%     61%       -3  non ritengo giusto modificare la Costituzion
+  N2          30%     39%       -9  sono contrario al sorteggio dei componenti d
+  N3           3%     31%      -28  sono all'opposizione del Governo in carica
+  N4          78%     27%      +51  sono contrario alla divisione del CSM in due
+  N5          51%     17%      +34  sono contrario all'istituzione dell'Alta Cor
+  N6           6%      7%       -1  seguo l'indicazione di voto del mio partito
+  N7          28%      4%      +24  sono contrario alla separazione delle carrie
+  NX          24%fittizia        —  sono contrario all'abolizione di un grado di
+
+  nessuna opzione scelta: 0% degli agenti
+  OPZIONE FITTIZIA NX: scelta dal 24% degli agenti.
+  Quota non trascurabile: lo strumento a risposta chiusa sta
+  in parte fabbricando le risposte, e le altre quote vanno
+  lette con la stessa cautela.
+
+Confronta questa tabella con quella della domanda aperta. Una ragione
+assente nel testo libero e frequente qui non e' un'opinione della
+popolazione: e' un'opinione che l'elenco le ha suggerito.

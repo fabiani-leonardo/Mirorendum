@@ -1,0 +1,16 @@
+{
+  "modello": "lab-qwen36",
+  "temperatura": 0.2,
+  "reps": 30,
+  "testi": "testi_originali.json",
+  "condizioni": {
+    "letterale": {
+      "SI": {},
+      "NO": {}
+    },
+    "schieramenti": {
+      "SI": {},
+      "NO": {}
+    }
+  }
+}
