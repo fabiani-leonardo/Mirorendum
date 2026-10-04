@@ -1,0 +1,76 @@
+formulazione da testi_originali.json: N1, N2, N3, N4, N5, N6, N7, NX, S1, S2, S3, S4, S5, SX
+120 chiamate a lab-qwen36, T=0.2, circa 3 minuti a 38 rpm
+  20/120
+  40/120
+  60/120
+  80/120
+  100/120
+  120/120
+
+==============================================================================
+ LETTERALE  —  chi vota SI: 30 risposte valide, 0 non interpretabili
+==============================================================================
+  cod    reale   stima    sd  posto  motivazione
+  S1       59%     45%  10.6      2  Sostegno alla separazione delle carriere tra
+  S2       35%     42%  10.8      3  Favore alla divisione del Consiglio Superior
+  S3       34%     59%   9.2      1  Sostegno all'istituzione di un'Alta Corte di
+  S4       24%     19%   5.3      5  Volontà generale di modificare la Costituzio
+  S5       18%     34%  11.7      4  Sostegno politico all'attuale Governo.
+  SX   fittizia     10%   3.2      6  Favore all'abolizione di un grado di giudizi
+
+  ordine rispetto al reale, Spearman: +0.60
+  errore assoluto medio sulle quote reali: 13.2 punti
+  quota attribuita all'opzione fittizia: 10%
+
+==============================================================================
+ LETTERALE  —  chi vota NO: 30 risposte valide, 0 non interpretabili
+==============================================================================
+  cod    reale   stima    sd  posto  motivazione
+  N1       61%     24%   7.2      5  Volontà di non modificare la Costituzione.
+  N2       39%     14%   7.6      7  Contrarietà al meccanismo del sorteggio per 
+  N3       31%     32%  10.4      3  Voto di opposizione politica all'esecutivo i
+  N4       27%     20%   9.0      6  Volontà di contrastare la divisione del CSM.
+  N5       17%     30%  10.0      4  Contrarietà all'istituzione dell'Alta Corte 
+  N6        7%     40%  13.1      1  Coerenza o indicazione di voto del proprio p
+  N7        4%     34%  14.0      2  Contrarietà specifica alla separazione delle
+  NX   fittizia     11%   5.5      8  Contrarietà all'abolizione di un grado di gi
+
+  ordine rispetto al reale, Spearman: -0.71
+  errore assoluto medio sulle quote reali: 20.9 punti
+  quota attribuita all'opzione fittizia: 11%
+
+==============================================================================
+ SCHIERAMENTI  —  chi vota SI: 30 risposte valide, 0 non interpretabili
+==============================================================================
+  cod    reale   stima    sd  posto  motivazione
+  S1       59%     46%  11.4      3  Sostegno alla separazione delle carriere tra
+  S2       35%     43%  12.8      4  Favore alla divisione del Consiglio Superior
+  S3       34%     55%  10.9      2  Sostegno all'istituzione di un'Alta Corte di
+  S4       24%     16%   4.1      5  Volontà generale di modificare la Costituzio
+  S5       18%     72%   7.8      1  Sostegno politico all'attuale Governo.
+  SX   fittizia     13%   4.6      6  Favore all'abolizione di un grado di giudizi
+
+  ordine rispetto al reale, Spearman: -0.30
+  errore assoluto medio sulle quote reali: 20.7 punti
+  quota attribuita all'opzione fittizia: 13%
+
+==============================================================================
+ SCHIERAMENTI  —  chi vota NO: 30 risposte valide, 0 non interpretabili
+==============================================================================
+  cod    reale   stima    sd  posto  motivazione
+  N1       61%     21%   7.2      6  Volontà di non modificare la Costituzione.
+  N2       39%     20%  10.6      7  Contrarietà al meccanismo del sorteggio per 
+  N3       31%     44%  10.7      2  Voto di opposizione politica all'esecutivo i
+  N4       27%     26%  11.6      5  Volontà di contrastare la divisione del CSM.
+  N5       17%     34%   9.7      4  Contrarietà all'istituzione dell'Alta Corte 
+  N6        7%     58%   9.9      1  Coerenza o indicazione di voto del proprio p
+  N7        4%     36%  11.5      3  Contrarietà specifica alla separazione delle
+  NX   fittizia     13%   5.9      8  Contrarietà all'abolizione di un grado di gi
+
+  ordine rispetto al reale, Spearman: -0.68
+  errore assoluto medio sulle quote reali: 25.0 punti
+  quota attribuita all'opzione fittizia: 13%
+
+scritti logs/b0mot_qwen_raw.jsonl e logs/b0mot_qwen_riepilogo.json
+Lettura: conta l'ordine piu' dei livelli. Una correlazione alta dice che il modello
+mette in cima le stesse ragioni degli elettori reali, anche se ne comprime le quote.
