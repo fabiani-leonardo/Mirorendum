@@ -1,0 +1,71 @@
+== 1. Commit, impronta e configurazione (appendice A)
+-- runs/sens_segui_partito_s1
+code_version|{"commit": "173ae7a", "modifiche_non_committate": true}
+fingerprint|"3905c2fc97fb"
+llm|{"model": "lab-qwen36", "budget": {"action": 1024, "reflection": 1024, "vote": 640}, "temperature": {"azione": 0.7, "riflessione": 0.4, "voto": 0.2}, "concurrency": 4, "stub": false}
+vote_question|{"origine": "quesiti/ballot.txt", "sha": "f015b9b51fe9", "testo": "Oggi, 22 marzo 2026, si vota il referendum costituzionale sulla giustizia. Sulla scheda c'e' scritto:\n\n  «Approvate il testo della legge costituzionale concernente\n  «Norme in materia di ordinamento giurisdizionale e di istituzione\n  della Alta Corte disciplinare», approvato dal Parlamento e pubblicato\n  nella Gazzetta Ufficiale?»\n\nVotando SI si approva la legge, votando NO la si respinge.\n\nTU cosa voti: SI, NO, o ASTENUTO?"}
+{"run_id": "campagna1", "seed": 1, "seed_modello": true, "segui_partito": true, "start_date": "2025-10-30", "end_date": "2026-03-22", "hours_per_tick": 24, "feed_size": 8, "news_slots": 2, "news_slots_mode": "gradiente", "max_news_per_tick": 30, "recommender": "hybrid", "out_of_network": 0.15, "max_actions": 3, "max_post_chars": 280, "max_body_chars": 1400, "base_activity": 0.35, "follow_drift_every": null, "follow_prob_per_like": 0.15, "follow_max_new": 2, "reflection_every": 2, "max_notes_in_prompt": 8, "survey_every": 30, "force_media_depth": null, "vote_question": "./quesiti/ballot.txt", "vote_question_sha": "f015b9b51fe9", "counterfactual_from_tick": null, "counterfactual_news_dir": null}
+-- runs/campagna1-1
+code_version|{"commit": "b13d063", "modifiche_non_committate": true}
+fingerprint|"9d0d0a3f314b"
+llm|{"model": "lab-qwen36", "budget": {"action": 1024, "reflection": 1024, "vote": 640}, "temperature": {"azione": 0.7, "riflessione": 0.4, "voto": 0.2}, "concurrency": 4, "stub": false}
+vote_question|{"origine": "quesiti/ballot.txt", "sha": "f015b9b51fe9", "testo": "Oggi, 22 marzo 2026, si vota il referendum costituzionale sulla giustizia. Sulla scheda c'e' scritto:\n\n  «Approvate il testo della legge costituzionale concernente\n  «Norme in materia di ordinamento giurisdizionale e di istituzione\n  della Alta Corte disciplinare», approvato dal Parlamento e pubblicato\n  nella Gazzetta Ufficiale?»\n\nVotando SI si approva la legge, votando NO la si respinge.\n\nTU cosa voti: SI, NO, o ASTENUTO?"}
+{"run_id": "campagna1-1", "seed": 1, "seed_modello": true, "segui_partito": true, "start_date": "2025-10-30", "end_date": "2026-03-22", "hours_per_tick": 24, "feed_size": 8, "news_slots": 2, "news_slots_mode": "gradiente", "max_news_per_tick": 30, "recommender": "hybrid", "out_of_network": 0.15, "max_actions": 3, "max_post_chars": 280, "max_body_chars": 1400, "base_activity": 0.35, "follow_drift_every": null, "follow_prob_per_like": 0.15, "follow_max_new": 2, "reflection_every": 2, "max_notes_in_prompt": 8, "survey_every": 30, "force_media_depth": null, "vote_question": "./quesiti/ballot.txt", "vote_question_sha": "f015b9b51fe9", "counterfactual_from_tick": null, "counterfactual_news_dir": null}
+
+== 2. Il prompt di riflessione nei due commit (paragrafo 7.5, appendice D)
+-- runs/sens_segui_partito_s1: commit 173ae7a, modifiche non committate: 1
+32:    "Ricevi la biografia statica (solo come contesto), le note accumulate "
+-- runs/campagna1-1: commit b13d063, modifiche non committate: 1
+32:    "Ricevi la biografia statica (solo come contesto), le note accumulate "
+-- albero di lavoro attuale:
+32:    "Ricevi la biografia statica (solo come contesto), le note accumulate "
+
+== 3. Note e riflessioni per gruppo (paragrafo 7.5)
+-- runs/sens_segui_partito_s1: gruppo | note | agenti con almeno una nota
+altri|16|7
+centrodestra|51|29
+centrosinistra|51|26
+senza partito|66|32
+   chiamate di riflessione per gruppo:
+altri|143
+centrodestra|677
+centrosinistra|582
+senza partito|783
+-- runs/campagna1-1: gruppo | note | agenti con almeno una nota
+altri|7|5
+centrodestra|46|27
+centrosinistra|42|26
+senza partito|3|2
+   chiamate di riflessione per gruppo:
+altri|143
+centrodestra|677
+centrosinistra|582
+senza partito|783
+-- riferimento, senza partito: voto finale | agenti | note medie
+ASTENUTO|6|0.3
+NO|24|1.9
+SI|6|3.2
+-- verifica, testo delle note dei senza partito:
+23|ignorato|Legge il dibattito sulla riforma della giustizia ma resta indifferente, preferendo concentrarsi su temi personali come il ciclismo e la famiglia, senza formarsi un'opinione politica.
+33|verso_no|Legge i commenti sulla lentezza della giustizia e, riconoscendo la propria esperienza professionale come ex infermiere, sviluppa una riserva verso la riforma, temendo che l'efficienza non comprometta i diritti, pur rimanendo distante dal dibattito politico generale.
+93|verso_no|Si convince che il referendum rappresenti un rischio concreto per l'indipendenza della magistratura, un valore cruciale per l'efficienza del sistema giudiziario che tocca da vicino la sua vita professionale e privata, orientandosi verso il No.
+
+== 4. Corpus ANSA (bibliografia, paragrafo 8.1)
+-- numero di file:
+609
+-- date di modifica, prima e ultima:
+-rw-r--r-- 1 leo leo  3473  8 set 15.35 23febbraio2026-1001.txt
+-rwxr-xr-x 1 leo leo  1550 21 apr 15.37 19marzo2026-1.txt
+-- dispacci che citano un sondaggio:
+27
+
+== 5. Griglia di sensibilita' con il legame (paragrafo 7.8)
+runs/sens_lp_azione_04_s1
+runs/sens_lp_fuori_rete_50_s1
+runs/sens_lp_random_s1
+runs/sens_lp_recency_s1
+runs/sens_lp_riflessione_02_s1
+runs/sens_lp_riflessione_07_s1
+runs/sens_lp_rumore_s1
+runs/sens_lp_senza_notizie_s1
+runs/sens_lp_senza_notizie_s2
